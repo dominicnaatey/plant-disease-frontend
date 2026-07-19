@@ -122,21 +122,27 @@ export default function Home() {
               <h2 className="text-sm font-semibold text-gray-500 mb-2">
                 Original Image
               </h2>
-              <Image
-                src={imageUrl}
-                alt="Uploaded leaf"
-                className="w-full rounded-lg object-cover"
-              />
+              <div className="relative w-full h-64">
+                <Image
+                  src={imageUrl}
+                  alt="Uploaded leaf"
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
             </div>
             <div className="bg-white rounded-xl shadow p-4">
               <h2 className="text-sm font-semibold text-gray-500 mb-2">
                 Grad-CAM Heatmap
               </h2>
-              <Image
-                src={result.heatmap_url}
-                alt="Grad-CAM heatmap"
-                className="w-full rounded-lg object-cover"
-              />
+              <div className="relative w-full h-64">
+                <Image
+                  src={result.heatmap_url}
+                  alt="Grad-CAM heatmap"
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
             </div>
           </div>
 
