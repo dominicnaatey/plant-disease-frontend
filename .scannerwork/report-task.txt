@@ -1,0 +1,6 @@
+projectKey=my-nextjs-app
+serverUrl=http://host.docker.internal:9000
+serverVersion=26.7.0.124771
+dashboardUrl=http://host.docker.internal:9000/dashboard?id=my-nextjs-app
+ceTaskId=fa3e8c72-d30b-46cd-b06c-7ad76f8859b7
+ceTaskUrl=http://host.docker.internal:9000/api/ce/task?id=fa3e8c72-d30b-46cd-b06c-7ad76f8859b7
