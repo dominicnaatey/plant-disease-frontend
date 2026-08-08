@@ -2,13 +2,17 @@ import { NextRequest, NextResponse } from "next/server";
 import { Storage } from "@google-cloud/storage";
 import { randomUUID } from "crypto";
 
+const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON!);
+
 const storage = new Storage({
-  projectId: "computer-vision-project-502523",
-  // If running locally, you'll need a service account key file:
-  // keyFilename: "path/to/service-account-key.json"
+  projectId: credentials.project_id,
+  credentials: {
+    client_email: credentials.client_email,
+    private_key: credentials.private_key,
+  },
 });
 
-const bucketName = "plant-disease-uploads"; // new bucket for user uploads, see below
+const bucketName = "plant-disease-uploads";
 
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
